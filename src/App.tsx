@@ -1,33 +1,33 @@
-import Person from "./components/Person"
+import {useState} from 'react'
 
 const App = ()=>{
+  
+  const [show, setShow] = useState(false);
 
-  const list =[
-  {
-      name: 'weslley',
-      age: 28
-    },
-    {
-      name: 'pedro',
-      age: 26
-    },
-    {
-      name: 'larissa',
-      age: 22
-    }
-  ];
+  const handleClick = () =>{
+    setShow(!show)
+    
+    //outra forma
 
-  return ( 
-    <div>     
-      <h2>Lista de presença</h2>
-      <ul>
-        {/* arrow function com () p/ redenrizar elemento na dom */}
-        {list.map((item, index)=>(
-					<Person key={index} data={item}/>
-        ))}
-      </ul> 
+    // if(show)
+    //   setShow(false)
+    // else
+    //   setShow(true)
+  }
+
+  //toggle = quando executa uma ação faz X, quando executada novamente voltada ao estado anterior
+    return ( 
+    <div>
+      <button onClick={handleClick}>{show ? 'Ocultar':'Mostrar'}</button>
+
+      {/* exibição condicional */}
+      {show && 
+        <div>
+          blabalbalbalabla
+        </div>
+      }
     </div>
-    );
+  );
 }
 
 export default App;
