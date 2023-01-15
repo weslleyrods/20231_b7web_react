@@ -1,45 +1,31 @@
-import { useState, ChangeEvent } from "react";
-import Button from "./components/Button"
+import Person from "./components/Person"
 
 const App = ()=>{
 
-  const [n, setN] = useState(0);
-  const [name, setName] = useState("");
-
-  const handleMinus = () =>{
-    setN(n - 1)
-  };
-  const handleMore = () =>{
-    setN(n + 2)
-  };
-
-  const handleName = (e: ChangeEvent<HTMLInputElement> ) =>{
-    setName(e.target.value)
-  }
-
-  const eventButtonAction = (txt:string) =>{
-    alert("Frase do App "+ txt)
-  }
+  const list =[
+  {
+      name: 'weslley',
+      age: 28
+    },
+    {
+      name: 'pedro',
+      age: 26
+    },
+    {
+      name: 'larissa',
+      age: 22
+    }
+  ];
 
   return ( 
-    <div>
-
-      <Button text="Clique no botão"
-      clickFn ={eventButtonAction}/>
-      
-      <br/>
-      <button onClick={handleMinus}>-</button>
-      <div>{n}</div>
-      <button onClick={handleMore}>+</button>
-
-      <hr/>
-      
-      <input type="text" placeholder="Digite seu nome" 
-      value={name}
-      onChange={handleName}
-      />  
-      <br/>
-      O seu nome é: {name}
+    <div>     
+      <h2>Lista de presença</h2>
+      <ul>
+        {/* arrow function com () p/ redenrizar elemento na dom */}
+        {list.map((item, index)=>(
+					<Person key={index} data={item}/>
+        ))}
+      </ul> 
     </div>
     );
 }
