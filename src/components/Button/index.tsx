@@ -1,7 +1,9 @@
+import './styles.css'
 
 type Props = {
   text: string;
   clickFn: (txt: string) => void;
+  
 }
 const Button = ({text, clickFn}: Props) =>{
 
@@ -10,7 +12,7 @@ const handleClick = () =>{
 }
 
   return(
-    <button onClick={handleClick}>{text}</button>
+    <button className='button' onClick={handleClick}>Clique aqui {text}</button>
   )
 }
 

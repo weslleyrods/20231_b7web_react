@@ -1,32 +1,30 @@
-import {useState} from 'react'
+import { useState} from 'react'
 
-const App = ()=>{
-  
-  const [show, setShow] = useState(false);
+// import './assets/Button.css'
+import Button from './components/Button'
+
+const App = () =>{
+
+  const [color, setColor] = useState('grey')
+  const [padding, setPadding] = useState(0)
 
   const handleClick = () =>{
-    setShow(!show)
-    
-    //outra forma
-
-    // if(show)
-    //   setShow(false)
-    // else
-    //   setShow(true)
+    setColor('green');
+    setPadding(20)
   }
+  const eventButtonAction = (txt: string) =>{
+    alert("Frase do App "+ txt )
+  }
+    return (
+      <div>
+        {/* <button 
+          onClick={handleClick}
+          style={{backgroundColor: color, color: 'white', padding}}>
+          Clique aqui
+        </button> */}
 
-  //toggle = quando executa uma ação faz X, quando executada novamente voltada ao estado anterior
-    return ( 
-    <div>
-      <button onClick={handleClick}>{show ? 'Ocultar':'Mostrar'}</button>
-
-      {/* exibição condicional */}
-      {show && 
-        <div>
-          blabalbalbalabla
-        </div>
-      }
-    </div>
+        <Button text="no botão" clickFn={eventButtonAction}/>
+      </div>
   );
 }
 
