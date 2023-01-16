@@ -1,7 +1,15 @@
 import { useState} from 'react'
 
+//estilização css padrão
 // import './assets/Button.css'
+
+//estilização com css modules 
 import Button from './components/Button'
+
+//estilização dom Styled componentes
+import styled from 'styled-components'
+import * as C from './AppStyles'
+
 
 const App = () =>{
 
@@ -17,6 +25,13 @@ const App = () =>{
   }
     return (
       <div>
+        <C.Container bg="green">
+          Texto do componente.
+          <C.ButtonStyled bg="red">Clique grande</C.ButtonStyled>
+          <C.ButtonStyled bg="green" small={true}>Clique menor</C.ButtonStyled>
+        </C.Container>
+
+
         <button 
           onClick={handleClick}
           style={{backgroundColor: color, color: 'white', padding}}>
