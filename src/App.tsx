@@ -24,13 +24,19 @@ const App = () =>{
     alert("Frase do App "+ txt )
   }
     return (
-      <div>
+      <div >
+        
+        
+        <div className='bg-black'>
+          Teste Tailwind
+        </div>
+
         <C.Container bg="green">
-          Texto do componente.
+          <span>Texto do componente.</span>   
+          <a href="" className='link'>Link qualquer</a>        
           <C.ButtonStyled bg="red">Clique grande</C.ButtonStyled>
           <C.ButtonStyled bg="green" small={true}>Clique menor</C.ButtonStyled>
         </C.Container>
-
 
         <button 
           onClick={handleClick}
