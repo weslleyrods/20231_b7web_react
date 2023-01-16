@@ -1,4 +1,5 @@
-import './styles.css'
+//import './styles.css'
+import styles from './styles.module.css'
 
 type Props = {
   text: string;
@@ -12,7 +13,11 @@ const handleClick = () =>{
 }
 
   return(
-    <button className='button' onClick={handleClick}>Clique aqui {text}</button>
+    <button 
+      className={styles.button} 
+      onClick={handleClick}>
+        Clique aqui {text}
+    </button>
   )
 }
 

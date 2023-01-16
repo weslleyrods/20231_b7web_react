@@ -17,11 +17,11 @@ const App = () =>{
   }
     return (
       <div>
-        {/* <button 
+        <button 
           onClick={handleClick}
           style={{backgroundColor: color, color: 'white', padding}}>
           Clique aqui
-        </button> */}
+        </button>
 
         <Button text="no botão" clickFn={eventButtonAction}/>
       </div>
